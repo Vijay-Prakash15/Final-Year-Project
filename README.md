@@ -293,7 +293,7 @@ Permission is hereby granted, free of charge, to any person obtaining a copy...
 
 Have questions or need help?
 
-- 📧 **Email**: [your-email@example.com]
+- 📧 **Email**: [vijaypr82701@gmail.com]
 - 💬 **Issues**: [GitHub Issues](https://github.com/Vijay-Prakash15/Final-Year-Project/issues)
 - 🤝 **Discussions**: [GitHub Discussions](https://github.com/Vijay-Prakash15/Final-Year-Project/discussions)
 
