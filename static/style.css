@@ -1,0 +1,289 @@
+:root {
+    --primary-bg: #f8f9fc;
+    --card-bg: #ffffff;
+    --text-main: #2d3748;
+    --text-light: #718096;
+    --accent: #4c51bf;
+    --accent-hover: #434190;
+    --grad-start: #667eea;
+    --grad-end: #764ba2;
+    --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.05);
+    --shadow-hover: 0 10px 25px rgba(0, 0, 0, 0.1);
+    --border-radius: 16px;
+    --input-border: #e2e8f0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+    background: var(--primary-bg);
+    color: var(--text-main);
+    display: flex;
+    justify-content: center;
+    padding: 3rem 1.5rem;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 850px;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+header {
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, var(--grad-start), var(--grad-end));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.5px;
+}
+
+header p {
+    color: var(--text-light);
+    font-size: 1.15rem;
+}
+
+/* Card General Styling */
+.card {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 2.5rem;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-highlight:hover {
+    box-shadow: var(--shadow-hover);
+}
+
+/* Input Area */
+.input-controls {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.mic-btn {
+    background: #f1f5f9;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: inset 0 0 0 1px var(--input-border);
+}
+
+.mic-btn:hover {
+    background: #e2e8f0;
+    transform: translateY(-2px);
+}
+
+.mic-btn.listening {
+    background: #fed7d7;
+    color: #e53e3e;
+    box-shadow: 0 0 0 0 rgba(229, 62, 62, 0.7);
+    animation: pulseMic 1.5s infinite;
+}
+
+@keyframes pulseMic {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(229, 62, 62, 0.7); }
+    70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(229, 62, 62, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(229, 62, 62, 0); }
+}
+
+textarea {
+    flex-grow: 1;
+    height: 100px;
+    padding: 1.25rem;
+    border: 1px solid var(--input-border);
+    border-radius: 12px;
+    font-size: 1.1rem;
+    resize: none;
+    background: #fafafa;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(76, 81, 191, 0.15);
+    background: #ffffff;
+}
+
+/* Status and Buttons */
+.status-box {
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+    color: var(--accent);
+    font-weight: 500;
+    min-height: 20px;
+    padding-left: 72px; /* aligns with textarea */
+}
+
+.action-buttons {
+    display: flex;
+    gap: 1.25rem;
+    justify-content: flex-end;
+}
+
+button {
+    padding: 0.9rem 2.5rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.primary-btn {
+    background: linear-gradient(135deg, var(--grad-start), var(--grad-end));
+    color: white;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.35);
+}
+
+.primary-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+}
+
+.secondary-btn {
+    background: #edf2f7;
+    color: var(--text-main);
+}
+
+.secondary-btn:hover {
+    background: #e2e8f0;
+}
+
+/* Output Area */
+.output-module {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-height: 380px;
+}
+
+.output-header {
+    width: 100%;
+    border-bottom: 2px solid #edf2f7;
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.output-header h2 {
+    font-size: 1.5rem;
+    color: var(--text-main);
+    font-weight: 600;
+}
+
+#output-sentence {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-light);
+    font-style: italic;
+}
+
+#output-current-word {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    min-height: 40px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.gesture-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    width: 100%;
+    min-height: 200px;
+    background: #fbfbfc;
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px dashed #e2e8f0;
+}
+
+.gesture-img {
+    max-width: 100%;
+    max-height: 320px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    animation: fadeInScale 0.4s ease-out;
+}
+
+.letter-img {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    background: white;
+    padding: 5px;
+    animation: fadeInScale 0.4s ease-out;
+}
+
+@keyframes fadeInScale {
+    0% { opacity: 0; transform: scale(0.95); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* Loading animation for graceful fetching */
+.loader {
+    border: 4px solid #edf2f7;
+    border-top: 4px solid var(--accent);
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive constraints */
+@media (max-width: 600px) {
+    .input-controls {
+        flex-direction: column;
+    }
+    textarea {
+        width: 100%;
+    }
+    .action-buttons {
+        justify-content: stretch;
+    }
+    button {
+        flex-grow: 1;
+    }
+    .status-box {
+        padding-left: 0;
+    }
+}

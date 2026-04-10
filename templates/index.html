@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hearing Impairment Assistant</title>
+    <meta name="description" content="Automatic Indian Sign Language Translator mapping speech or text to sign gestures.">
+    <!-- Load custom fonts from Google for a premium aesthetic -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Hearing Impairment Assistant</h1>
+            <p>Converts audio or text into Indian Sign Language gestures seamlessly</p>
+        </header>
+        
+        <main>
+            <!-- Input Card -->
+            <section class="card input-module">
+                <div class="input-controls">
+                    <!-- Browser Web Speech API button -->
+                    <button id="mic-btn" class="mic-btn" title="Click to speak">🎤</button>
+                    <textarea id="text-input" placeholder="Enter your sentence here..."></textarea>
+                </div>
+                
+                <div class="status-box">
+                    <span id="status-text">Ready</span>
+                </div>
+                
+                <div class="action-buttons">
+                    <button id="convert-btn" class="primary-btn">Translate</button>
+                    <button id="reset-btn" class="secondary-btn">Reset</button>
+                </div>
+            </section>
+
+            <!-- Output Card -->
+            <section class="card output-module hover-highlight">
+                <div class="output-header">
+                    <h2>Translation Output</h2>
+                </div>
+                
+                <div id="output-sentence"></div>
+                <div id="output-current-word"></div>
+                
+                <!-- Displays GIFs or Letters here dynamically -->
+                <div id="gesture-display" class="gesture-display">
+                    <!-- Image rendering injected by JS -->
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <script src="/static/script.js"></script>
+</body>
+</html>
