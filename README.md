@@ -64,3 +64,42 @@ Automatic-Indian-Sign-Language-Translator/
 ├── app.py
 ├── requirements.txt
 └── README.md
+
+
+
+Installation
+Clone Repository
+git clone https://github.com/Vijay-Prakash15/Final-Year-Project.git
+cd Final-Year-Project
+Install Dependencies
+pip install -r requirements.txt
+Run Project
+python app.py
+Open in Browser
+http://127.0.0.1:5000/
+Use Case
+
+This project helps:
+
+Hearing-impaired individuals
+Students learning ISL
+Assistive communication systems
+Future Improvements
+Real-time speech recognition
+AI-based sign avatar generation
+Hindi language support
+Mobile application integration
+Screenshots
+System Workflow
+
+(Add your workflow image here)
+
+UI Demo
+
+(Add project screenshots here)
+
+Contributors
+Vijay Prakash Gupta
+License
+
+This project is developed for educational and research purposes.
